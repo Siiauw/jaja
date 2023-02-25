@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>get correct</title>
+</head>
+<style>
+    #user{
+        width: 100px;
+        margin: auto;
+        text-align: center;
+        font-size: 70px;
+    }
+</style>
+
+<body style="background-color: rgb(215, 215, 215);">
+    <h1 id="right" style="text-align: center; margin-top: 250px; margin-bottom: 30px;;color: black; font-weight: 100;">188</h1>
+    <h1 id="text" style="text-align: center; margin-top: 0;color:rgb(201, 201, 201);">get correct!</h1>
+    <p id="user" onmouseover="realbabo()" onmouseout="stop()">0</p>
+    
+    <script>
+        
+        let [startNumber,correctNumber]=[0,randomNumber()];
+        
+        function realbabo(){
+            event=setInterval(babo,10);
+            if(startNumber==correctNumber){
+                change();
+            }
+            if(startNumber>0){
+                if(startNumber!=correctNumber){
+                clearInterval(event);
+                }
+            }
+        }
+
+        function babo(){ 
+            ++startNumber;
+            document.getElementById("user").innerHTML=startNumber;
+        }
+
+        function stop(){
+            clearInterval(event);
+        }
+        
+        function randomNumber(){
+            const number=Math.floor(Math.random() * 499)+100;
+            document.getElementById("right").innerHTML=number;
+            return number;
+        }
+
+        function change(){
+            document.getElementById("text").style.color="green";
+        }
+    </script>
+</body>
+</html>
